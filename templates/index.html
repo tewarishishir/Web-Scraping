@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!-- Mars Data -->
+    <div class="row" id="mars-data">
+      <div class="col-md-12">
+        <h3 class="heading">Latest Mars News </h3>
+        <h4 class="heading">{{data.latest_title}} </h4>
+        <small style="font-size: small">{{data.latest_para}}</small>
+      </div>
+    </div>
+
+    <div class="row" id="mars-image-weather">
+      <div class="col-md-8">
+          <h2>Featured Mars Image</h2>
+          <img src="{{ data.featured_image_url }}" alt="Mars Image" style="width:100%; height:100%">
+      </div>
+      <div class="col-md-4">
+        <div style = "border-style: solid; border-width: 2px; border-color: lightgrey; padding-right: 10px; padding-left: 10px; padding-bottom: 15px; padding-top: 15px;">
+          <h4 class="heading">Current Weather on Mars</h4>
+          <small style="font-size: small">{{data.mars_weather}} </small>
+        </div>
+        <h3>Mars Facts</h3>
+        <div>{{data.facts | safe }}</div>
+      </div>
+
+      <div class="row" id="mars-hemi" style="padding:10px;">
+          <div class="col-md-12">
+            <h2 class="heading" style="text-align: center; padding-top: 50px;">Mars Hemispheres</h2>
+            <hr>
+          </div>
+      </div>
+
+      <div class="row" id="mars-hemi-1" style="padding:10px;">
+          <div class="col-md-6">
+              <div style = "border-style: solid; border-width: 2px; border-color: lightgrey; padding-right: 3px; padding-left: 3px; padding-bottom: 15px; padding-top: 3px;">
+              <img src="{{ data.hemisphere_image_urls[0].img_url }}" alt="Mars Hemi Image 1" style="width:100%; height:100%">
+              <h2>{{ data.hemisphere_image_urls[0].title }} Enhanced</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+              <div style = "border-style: solid; border-width: 2px; border-color: lightgrey; padding-right: 3px; padding-left: 3px; padding-bottom: 15px; padding-top: 3px;">
+                  <img src="{{ data.hemisphere_image_urls[1].img_url }}" alt="Mars Hemi Image 2" style="width:100%; height:100%">
+                  <h2>{{ data.hemisphere_image_urls[1].title }} Enhanced</h2>
+            </div>
+          </div>
+      </div>
+      <div class="row" id="mars-hemi-2" style="padding:10px;">
+          <div class="col-md-6">
+              <div style = "border-style: solid; border-width: 2px; border-color: lightgrey; padding-right: 3px; padding-left: 3px; padding-bottom: 15px; padding-top: 3px;">
+                  <img src="{{ data.hemisphere_image_urls[2].img_url }}" alt="Mars Hemi Image 3" style="width:100%; height:100%">
+                  <h2>{{ data.hemisphere_image_urls[2].title }} Enhanced</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+              <div style = "border-style: solid; border-width: 2px; border-color: lightgrey; padding-right: 3px; padding-left: 3px; padding-bottom: 15px; padding-top: 3px;">
+                  <img src="{{ data.hemisphere_image_urls[3].img_url }}" alt="Mars Hemi Image 4" style="width:100%; height:100%">
+                  <h2>{{ data.hemisphere_image_urls[3].title }} Enhanced</h2>
+            </div>
+            </div>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+
+</html>
+
